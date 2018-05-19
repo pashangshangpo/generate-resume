@@ -4,10 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>{{outputFileName}}</title>
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-  
+  <header>
+    <h1>{{name}}</h1>
+    <p>{{age}} | {{sex}} | {{education}}</p>
+    <p>手机号: {{tel}} | 邮箱: {{email}}</p>
+    <p>当前状态: {{currentState}} | 期望薪资: {{expectedSalary}}</p>
+    <p>期望城市: {{expectCity}} | 求职意向: {{jobIntension}}</p>
+    <nav>
+      {{each personalWebsite}}
+      <a href="{{$value.url}}">{{$value.name}}: {{$value.url}}</a>
+      {{/each}}
+    </nav>
+    <p>自我介绍: {{toIntroduceMyself}}</p>
+  </header>
+  <main>
+    <section>
+      <header>
+        <h2>工作经验</h2>
+      </header>
+      <main>
+        <nav>
+          <ul>
+            {{each workExperience}}
+            <li>{{$value}}</li>
+            {{/each}}
+          </ul>
+        </nav>
+      </main>
+    </section>
+    <section>
+      <header>
+        <h2>项目经验</h2>
+      </header>
+      <main>
+        <nav>
+          <ul>
+            {{each projectExperience}}
+            <li>{{$value}}</li>
+            {{/each}}
+          </ul>
+        </nav>
+      </main>
+    </section>
+    <section>
+      <header>
+        <h2>开源项目及作品</h2>
+      </header>
+      <main>
+        {{each works}}
+          <h3>{{$value.name}}</h3>
+          <nav>
+            <ul>
+              {{each $value.list}}
+                <li>{{$value}}</li>
+              {{/each}}
+            </ul>
+          </nav>
+        {{/each}}
+      </main>
+    </section>
+  </main>
 </body>
 </html>
