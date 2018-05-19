@@ -21,7 +21,8 @@ body {
   padding: 30px 14px 100px 14px;
 
   font-family: PingFangSC-Regular;
-  background: ghostwhite;
+  color: #404040;
+  background: #f9f9f9;
 }
 
 a {
@@ -32,7 +33,6 @@ a {
 
 .header {
   font-size: 14px;
-  color: #404040;
   line-height: 25px;
   text-align: center;
 }
@@ -45,4 +45,31 @@ a {
 
 .header ul {
   list-style: none;
+}
+
+.main {
+  width: 800px;
+  margin: 24px auto 0;
+}
+
+.main h2 {
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.main h3 {
+  margin: 10px 0;
+  
+  font-size: 14px;
+}
+
+.main > section:not(:first-child) {
+  margin-top: 12px;
+}
+
+.main ul {
+  padding-left: 18px;
 }
