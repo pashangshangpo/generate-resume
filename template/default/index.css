@@ -101,3 +101,12 @@ a {
 
   color:#757575;
 }
+
+.main li a[href="javascript:;"] {
+  color: inherit;
+  cursor: text;
+}
+
+.main .works li p {
+  display: inline-block;
+}

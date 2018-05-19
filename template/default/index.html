@@ -51,7 +51,7 @@
         </nav>
       </main>
     </section>
-    <section>
+    <section class="works">
       <header>
         <h2>开源项目及作品</h2>
       </header>
@@ -61,7 +61,10 @@
           <nav>
             <ul>
               {{each $value.list}}
-                <li>{{$value}}</li>
+                <li>
+                  <a href="{{$value.url || 'javascript:;'}}">{{$value.name}}</a>
+                  <p>{{$value.describe}}</p>
+                </li>
               {{/each}}
             </ul>
           </nav>
