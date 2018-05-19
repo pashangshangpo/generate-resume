@@ -41,7 +41,7 @@ const template = require('art-template')
  *   outputDir: String 输出目录路径
  */
 
-module.exports = (templateName, config, outputDir) => {
+const outputFile = (templateName, config) => {
   const html = template(join(__dirname, 'template', templateName, 'index.html'), config)
   const tempOutput = join(__dirname, 'output')
 
@@ -51,4 +51,8 @@ module.exports = (templateName, config, outputDir) => {
 
   execSync(`cp -r template/${templateName} ${tempOutput}`, { cwd: __dirname })
   fs.writeFileSync(join(tempOutput, templateName, 'index.html'), html)
+}
+
+module.exports = (templateName, config, outputDir) => {
+  outputFile(templateName, config)
 }
