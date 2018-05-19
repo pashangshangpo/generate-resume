@@ -18,7 +18,7 @@ main {
 }
 
 body {
-  padding: 25px 14px 100px;
+  padding: 20px 14px 100px;
 
   font-family: PingFangSC-Regular;
   color: #404040;
@@ -49,8 +49,8 @@ a {
 
 .main {
   width: 800px;
-  padding: 0 14px;
-  margin: 24px auto 0;
+  padding: 0 20px;
+  margin: 20px auto 0;
 
   box-sizing: border-box;
 }
