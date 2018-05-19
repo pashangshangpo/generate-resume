@@ -22,7 +22,7 @@ body {
 
   font-family: PingFangSC-Regular;
   color: #404040;
-  background: #f9f9f9;
+  background: #fdfdfd;
 }
 
 a {
@@ -74,7 +74,27 @@ a {
   padding-left: 18px;
 }
 
+.main ul li {
+  line-height: 24px;
+}
+
 .main .work-experience ul {
-  list-style: none;
   padding-left: 0;
+  
+  list-style: none;
+}
+
+.main .work-experience ul li {
+  margin-bottom: 5px;
+}
+
+.main .title time {
+  display: inline-block;
+  width: 140px;
+}
+
+.main .describe {
+  margin-left: 146px;
+
+  color:#757575;
 }

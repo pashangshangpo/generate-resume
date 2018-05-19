@@ -30,7 +30,10 @@ const template = require('art-template')
  *         url: String 网址
  *     toIntroduceMyself: String 自我介绍
  *     workExperience: Array [Item] 工作经历
- *       Item: String
+ *       Item: Object
+ *         time: String 时间
+ *         company: String 公司
+ *         describe: String 描述
  *     projectExperience: Array [Item] 项目经验
  *       Item: String
  *     works: Array [Item] 作品

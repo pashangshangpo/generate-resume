@@ -32,7 +32,13 @@
         <nav>
           <ul>
             {{each workExperience}}
-            <li>{{$value}}</li>
+            <li>
+              <p class="title">
+                <time>{{$value.time}}</time>
+                <span>{{$value.company}}</span>
+              </p>
+              <p class="describe">{{$value.describe}}</p>
+            </li>
             {{/each}}
           </ul>
         </nav>
