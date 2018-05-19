@@ -40,9 +40,12 @@ const template = require('art-template')
  *         describes: Array 描述列表
  *     works: Array [Item] 作品
  *       Item: Object
- *         name: String 名称
+ *         name: String 类名
  *         list: Array [Item] 作品列表
- *           Item: String
+ *           Item: Object
+ *             name: String 作品名
+ *             describe: String 作品描述
+ *             url: String 作品地址
  *     outputFileName: String 输出的文件名
  *   outputDir: String 输出目录路径
  */
