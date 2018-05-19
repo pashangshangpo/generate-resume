@@ -10,6 +10,8 @@ const { execSync } = require('child_process')
 const { join } = require('path')
 const template = require('art-template')
 
+template.defaults.escape = false
+
 /**
  * @start-def: convert: (config, outputDir) => undefined
  *   templateName: String 模板名
