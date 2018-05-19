@@ -5,6 +5,7 @@
  */
 
 const fs = require('fs')
+const http = require('http')
 const { execSync } = require('child_process')
 const { join } = require('path')
 const template = require('art-template')
@@ -54,5 +55,21 @@ const outputFile = (templateName, config) => {
 }
 
 module.exports = (templateName, config, outputDir) => {
+  const currentTemplate = join(__dirname, 'output', templateName)
+
   outputFile(templateName, config)
+
+  http.createServer((req, res) => {
+    let url = req.url
+    if (url === '/') {
+      url = '/index.html'
+    }
+
+    if (fs.existsSync(join(currentTemplate, url))) {
+      res.end(fs.readFileSync(join(currentTemplate, url)).toString())
+    }
+    else {
+      res.end()
+    }
+  }).listen(8123)
 }

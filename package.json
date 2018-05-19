@@ -5,6 +5,9 @@
   "repository": "https://github.com/pashangshangpo/generate-resume.git",
   "author": "爬上上坡 <pashangshangpo@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "pm2 start ecosystem.config.js"
+  },
   "devDependencies": {
     "art-template": "^4.12.2"
   }
