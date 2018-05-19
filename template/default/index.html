@@ -37,18 +37,21 @@
         </nav>
       </main>
     </section>
-    <section>
+    <section class="project-experience">
       <header>
         <h2>项目经验</h2>
       </header>
       <main>
-        <nav>
-          <ul>
-            {{each projectExperience}}
-            <li>{{$value.name}}</li>
-            {{/each}}
-          </ul>
-        </nav>
+        {{each projectExperience}}
+          <h3>{{$value.name}}</h3>
+          <nav>
+            <ul>
+              {{each $value.describes}}
+                <li>{{$value}}</li>
+              {{/each}}
+            </ul>
+          </nav>
+        {{/each}}
       </main>
     </section>
     <section class="works">
@@ -79,7 +82,9 @@
         <nav>
           <ul>
             {{each personalWebsite}}
-            <li><a href="{{$value.url}}">{{$value.name}}: {{$value.url}}</a></li>
+              <li>
+                <a href="{{$value.url}}">{{$value.name}}: {{$value.url}}</a>
+              </li>
             {{/each}}
           </ul>
         </nav>

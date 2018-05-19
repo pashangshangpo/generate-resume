@@ -20,6 +20,7 @@ main {
 body {
   padding: 20px 14px 100px;
 
+  font-size: 14px;
   font-family: PingFangSC-Regular;
   color: #404040;
   background: #fdfdfd;
@@ -100,6 +101,18 @@ a {
   margin-left: 146px;
 
   color:#757575;
+}
+
+.main .project-experience ul {
+  list-style: none;
+}
+
+.main .project-experience ul li {
+  line-height: 20px;
+}
+
+.main .project-experience ul li:not(:first-child) {
+  margin-top: 8px;
 }
 
 .main li a[href="javascript:;"] {
