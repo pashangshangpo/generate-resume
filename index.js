@@ -4,6 +4,11 @@
  * @createTime 2018年5月19日 上午11:38
  */
 
+const fs = require('fs')
+const { execSync } = require('child_process')
+const { join } = require('path')
+const template = require('art-template')
+
 /**
  * @start-def: convert: (config, outputDir) => undefined
  *   templateName: String 模板名
@@ -35,6 +40,15 @@
  *     outputFileName: String 输出的文件名
  *   outputDir: String 输出目录路径
  */
-const convert = (templateName, config, outputDir) => {
-  
+
+module.exports = (templateName, config, outputDir) => {
+  const html = template(join(__dirname, 'template', templateName, 'index.html'), config)
+  const tempOutput = join(__dirname, 'output')
+
+  if (!fs.existsSync(tempOutput)) {
+    fs.mkdirSync(tempOutput)
+  }
+
+  execSync(`cp -r template/${templateName} ${tempOutput}`, { cwd: __dirname })
+  fs.writeFileSync(join(tempOutput, templateName, 'index.html'), html)
 }
