@@ -35,7 +35,9 @@ const template = require('art-template')
  *         company: String 公司
  *         describe: String 描述
  *     projectExperience: Array [Item] 项目经验
- *       Item: String
+ *       Item: Object
+ *         name: String 名称
+ *         describes: Array 描述列表
  *     works: Array [Item] 作品
  *       Item: Object
  *         name: String 名称
