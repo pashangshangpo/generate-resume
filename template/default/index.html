@@ -14,13 +14,6 @@
     <p>{{tel}} | {{email}}</p>
     <p>当前状态: {{currentState}} | 期望薪资: {{expectedSalary}}</p>
     <p>期望城市: {{expectCity}} | 求职意向: {{jobIntension}}</p>
-    <!-- <nav>
-      <ul>
-        {{each personalWebsite}}
-          <li><a href="{{$value.url}}">{{$value.name}}: {{$value.url}}</a></li>
-        {{/each}}
-      </ul>
-    </nav> -->
     <p>自我介绍: {{toIntroduceMyself}}</p>
   </header>
   <main class="main">
@@ -73,6 +66,20 @@
             </ul>
           </nav>
         {{/each}}
+      </main>
+    </section>
+    <section>
+      <header>
+        <h2>博客及代码仓库</h2>
+      </header>
+      <main>
+        <nav>
+          <ul>
+            {{each personalWebsite}}
+            <li><a href="{{$value.url}}">{{$value.name}}: {{$value.url}}</a></li>
+            {{/each}}
+          </ul>
+        </nav>
       </main>
     </section>
   </main>
