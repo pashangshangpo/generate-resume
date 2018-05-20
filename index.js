@@ -26,7 +26,7 @@ const outputFile = (templateName, config) => {
 }
 
 /**
- * .def: (config, outputDir) => undefined
+ * .def: (templateName, config, outputDir) => undefined
  *   templateName: String 模板名
  *   config: Object
  *     name: String 姓名
