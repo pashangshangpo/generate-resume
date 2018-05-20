@@ -66,6 +66,7 @@ const outputFile = (templateName, config) => {
 }
 
 module.exports = (templateName, config, outputDir) => {
+  const port = 8123
   const currentTemplate = join(__dirname, 'output', templateName)
 
   outputFile(templateName, config)
@@ -83,11 +84,11 @@ module.exports = (templateName, config, outputDir) => {
       else {
         res.end()
       }
-    }).listen(8123)
+    }).listen(port)
   }
   else {
     RenderPDF.generateSinglePdf(
-      'http://127.0.0.1:8123/',
+      `http://127.0.0.1:${port}`,
       join(outputDir, config.outputFileName + '.pdf'),
       {
         noMargins: true,
