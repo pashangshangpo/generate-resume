@@ -9,6 +9,7 @@ module.exports = {
     {
       name: 'generate-resume',
       script: './test.js',
+      args: 'dev',
       watch: [
         'index.js',
         'test.js',

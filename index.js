@@ -69,17 +69,19 @@ module.exports = (templateName, config, outputDir) => {
 
   outputFile(templateName, config)
 
-  http.createServer((req, res) => {
-    let url = req.url
-    if (url === '/') {
-      url = '/index.html'
-    }
-
-    if (fs.existsSync(join(currentTemplate, url))) {
-      res.end(fs.readFileSync(join(currentTemplate, url)).toString())
-    }
-    else {
-      res.end()
-    }
-  }).listen(8123)
+  if (process.argv.slice(2)[0] === 'dev') {
+    http.createServer((req, res) => {
+      let url = req.url
+      if (url === '/') {
+        url = '/index.html'
+      }
+  
+      if (fs.existsSync(join(currentTemplate, url))) {
+        res.end(fs.readFileSync(join(currentTemplate, url)).toString())
+      }
+      else {
+        res.end()
+      }
+    }).listen(8123)
+  }
 }
