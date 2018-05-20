@@ -71,22 +71,21 @@ module.exports = (templateName, config, outputDir) => {
 
   outputFile(templateName, config)
 
-  if (process.argv.slice(2)[0] === 'dev') {
-    http.createServer((req, res) => {
-      let url = req.url
-      if (url === '/') {
-        url = '/index.html'
-      }
-  
-      if (fs.existsSync(join(currentTemplate, url))) {
-        res.end(fs.readFileSync(join(currentTemplate, url)).toString())
-      }
-      else {
-        res.end()
-      }
-    }).listen(port)
-  }
-  else {
+  http.createServer((req, res) => {
+    let url = req.url
+    if (url === '/') {
+      url = '/index.html'
+    }
+
+    if (fs.existsSync(join(currentTemplate, url))) {
+      res.end(fs.readFileSync(join(currentTemplate, url)).toString())
+    }
+    else {
+      res.end()
+    }
+  }).listen(port)
+
+  if (process.argv.slice(2)[0] !== 'dev') {
     RenderPDF.generateSinglePdf(
       `http://127.0.0.1:${port}`,
       join(outputDir, config.outputFileName + '.pdf'),
@@ -94,6 +93,8 @@ module.exports = (templateName, config, outputDir) => {
         noMargins: true,
         includeBackground: true
       }
-    )
+    ).then(() => {
+      process.exit(0)
+    })
   }
 }
