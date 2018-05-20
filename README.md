@@ -11,7 +11,8 @@
 npm install pm2 -g
 ```
 
-git clone https://github.com/pashangshangpo/generate-resume.git
+- git clone https://github.com/pashangshangpo/generate-resume.git
+- npm install
 
 ## 示例
 新建一个test.js
