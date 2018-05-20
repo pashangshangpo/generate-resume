@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "art-template": "^4.12.2",
+    "chrome-headless-render-pdf": "^1.7.1",
     "html-pdf": "^2.2.0"
   }
 }
