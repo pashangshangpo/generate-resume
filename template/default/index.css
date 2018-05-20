@@ -18,7 +18,7 @@ main {
 }
 
 body {
-  padding: 20px 14px 100px;
+  padding: 20px 14px 0;
 
   font-size: 14px;
   font-family: PingFangSC-Regular;
