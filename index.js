@@ -13,8 +13,20 @@ const RenderPDF = require('chrome-headless-render-pdf')
 
 template.defaults.escape = false
 
+const outputFile = (templateName, config) => {
+  const html = template(join(__dirname, 'template', templateName, 'index.html'), config)
+  const tempOutput = join(__dirname, 'output')
+
+  if (!fs.existsSync(tempOutput)) {
+    fs.mkdirSync(tempOutput)
+  }
+
+  execSync(`cp -r template/${templateName} ${tempOutput}`, { cwd: __dirname })
+  fs.writeFileSync(join(tempOutput, templateName, 'index.html'), html)
+}
+
 /**
- * @start-def: convert: (config, outputDir) => undefined
+ * .def: (config, outputDir) => undefined
  *   templateName: String 模板名
  *   config: Object
  *     name: String 姓名
@@ -52,19 +64,6 @@ template.defaults.escape = false
  *     outputFileName: String 输出的文件名
  *   outputDir: String 输出目录路径
  */
-
-const outputFile = (templateName, config) => {
-  const html = template(join(__dirname, 'template', templateName, 'index.html'), config)
-  const tempOutput = join(__dirname, 'output')
-
-  if (!fs.existsSync(tempOutput)) {
-    fs.mkdirSync(tempOutput)
-  }
-
-  execSync(`cp -r template/${templateName} ${tempOutput}`, { cwd: __dirname })
-  fs.writeFileSync(join(tempOutput, templateName, 'index.html'), html)
-}
-
 module.exports = (templateName, config, outputDir) => {
   const port = 8123
   const currentTemplate = join(__dirname, 'output', templateName)
