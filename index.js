@@ -9,6 +9,7 @@ const http = require('http')
 const { execSync } = require('child_process')
 const { join } = require('path')
 const template = require('art-template')
+const pdf = require('html-pdf')
 
 template.defaults.escape = false
 
@@ -83,5 +84,13 @@ module.exports = (templateName, config, outputDir) => {
         res.end()
       }
     }).listen(8123)
+  }
+  else {
+    pdf.create(fs.readFileSync(join(currentTemplate, 'index.html')).toString())
+    .toFile(join(outputDir, config.outputFileName + '.pdf'), (err, res) => {
+      if (err) {
+        console.log(err)
+      }
+    })
   }
 }
