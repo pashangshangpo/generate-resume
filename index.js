@@ -86,6 +86,13 @@ module.exports = (templateName, config, outputDir) => {
     }).listen(8123)
   }
   else {
-    RenderPDF.generateSinglePdf('http://127.0.0.1:8123/', join(outputDir, config.outputFileName + '.pdf'))
+    RenderPDF.generateSinglePdf(
+      'http://127.0.0.1:8123/',
+      join(outputDir, config.outputFileName + '.pdf'),
+      {
+        noMargins: true,
+        includeBackground: true
+      }
+    )
   }
 }
