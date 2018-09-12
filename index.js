@@ -35,6 +35,7 @@ const outputFile = (templateName, config) => {
  *     tel: String 手机号
  *     email: String 邮箱
  *     education: String 学历
+ *     workingYears: String 工作年限
  *     expectCity: String 期望城市
  *     expectedSalary: String 期望薪资
  *     jobIntension: String 求职意向
