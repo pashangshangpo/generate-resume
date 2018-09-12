@@ -65,7 +65,14 @@
             <ul>
               {{each $value.list}}
                 <li>
-                  <a href="{{$value.url || 'javascript:;'}}">{{$value.name}}</a>
+                  {{if $value.url}}
+                    <a href="{{$value.url}}">{{$value.name}}</a>
+                  {{/if}}
+
+                  {{if !$value.url}}
+                    <p>{{$value.name}}</p>
+                  {{/if}}
+
                   {{if $value.describe}}
                     <p>{{$value.describe}}</p>
                   {{/if}}
