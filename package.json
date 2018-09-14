@@ -6,7 +6,8 @@
   "author": "爬上上坡 <pashangshangpo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "pm2 start ecosystem.config.js"
+    "start": "pm2 start ecosystem.config.js",
+    "stop": "pm2 delete generate-resume"
   },
   "devDependencies": {
     "art-template": "^4.12.2",
