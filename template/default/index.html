@@ -14,9 +14,16 @@
     <p>{{tel}}  {{email}}</p>
     <p>期望城市: {{expectCity}} | 求职意向: {{jobIntension}}</p>
     <p>当前状态: {{currentState}} | 期望薪资: {{expectedSalary}}</p>
-    <p>自我介绍: {{toIntroduceMyself}}</p>
   </header>
   <main class="main">
+    <section>
+      <header>
+        <h2>自我介绍</h2>
+      </header>
+      <main>
+        <p class="info">{{toIntroduceMyself}}</p>
+      </main>
+    </section>
     <section class="work-experience">
       <header>
         <h2>工作经历</h2>
@@ -30,7 +37,7 @@
                 <time>{{$value.time}}</time>
                 <span>{{$value.company}}</span>
               </p>
-              <p class="describe">{{$value.describe}}</p>
+              <p class="describe info">{{$value.describe}}</p>
             </li>
             {{/each}}
           </ul>

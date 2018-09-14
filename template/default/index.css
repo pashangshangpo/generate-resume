@@ -32,6 +32,10 @@ a {
   text-decoration: none;
 }
 
+.info {
+  color:#757575;
+}
+
 .header {
   font-size: 14px;
   line-height: 24px;
@@ -99,8 +103,6 @@ a {
 
 .main .describe {
   margin-left: 146px;
-
-  color:#757575;
 }
 
 .main .project-experience ul {
