@@ -5,7 +5,7 @@
 
 由于使用到了chrome headless, 因此需要你的chrome版本大于59, 主要是用chrome来生成pdf文件, 尝试过使用其他的一些html to pdf方案, 但是效果不太好, 最后还是觉得chrome生成的pdf效果好一些
 
-如果你需要修改模板, 或者新增模板则需要安装pm2, 如果只使用默认的模板则不需要安装
+如果你需要在浏览器中调试模板, 则需要安装pm2
 
 ```
 npm install pm2 -g
@@ -176,8 +176,8 @@ toPdf(
 
 如果不想用默认的模板, 可以在template中自己新建一个, 然后使用的时候把相应的模板名传递过去, 模板的使用语法可以看下[art-template](https://aui.github.io/art-template/), 如果是自己新建模板, 则config可以自己定义, 不需要按照默认的来写
 
-如果需要调试样式和模板, 则使用npm run start, 然后打开 http://127.0.0.1:8123 即可看到效果
+如果需要在浏览器中调试样式和模板, 则使用npm run start, 然后打开 http://127.0.0.1:8123 即可看到效果
 
 ## 注意事项
 
-如果使用了npm run start, 之后希望生成pdf, 则需要先执行一下pm2 delete generate-resume, 然后再使用node test.js进行输出pdf
+如果使用了npm run start, 之后希望生成pdf, 则需要先执行一下npm run stop, 然后再使用node test.js进行输出pdf
