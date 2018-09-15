@@ -144,3 +144,14 @@ a {
 .main .works li p {
   display: inline-block;
 }
+
+.main .keyword li {
+  display: inline-block;
+  height: 22px;
+  padding: 0 6px;
+
+  font-size: 13px;
+  line-height: 22px;
+  color: #017E66;
+  background-color: rgba(1,126,102,0.08);
+}
