@@ -33,6 +33,10 @@ toPdf(
     expectedSalary: '面议',
     jobIntension: 'Web前端工程师',
     currentState: '求职中',
+    keyworld: [
+      'html',
+      'css'
+    ],
     personalWebsite: [
       {
         name: 'github',
@@ -146,6 +150,8 @@ toPdf(
  *         name: String 名称
  *         url: String 网址
  *     toIntroduceMyself: String 自我介绍
+ *     keyworld: Array [Item] 技能关键字
+ *       Item: String
  *     workExperience: Array [Item] 工作经历
  *       Item: Object
  *         time: String 时间
