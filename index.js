@@ -78,7 +78,7 @@ module.exports = (templateName, config, outputDir) => {
     }
 
     if (fs.existsSync(join(currentTemplate, url))) {
-      res.end(fs.readFileSync(join(currentTemplate, url)).toString())
+      res.end(fs.readFileSync(join(currentTemplate, url)))
     }
     else {
       res.end()
