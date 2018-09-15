@@ -36,6 +36,13 @@ a {
   color:#757575;
 }
 
+.icon {
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+  background: url(./image/icons.png) -53px -6px no-repeat;
+}
+
 .header {
   font-size: 14px;
   line-height: 24px;
@@ -50,6 +57,18 @@ a {
 
 .header ul {
   list-style: none;
+}
+
+.header .tel {
+  width: 12px;
+  height: 14px;
+  background-position: -131px -70px;
+}
+
+.header .email {
+  width: 14px;
+  height: 10px;
+  background-position: -150px -73px;
 }
 
 .main {
