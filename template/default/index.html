@@ -24,6 +24,51 @@
         <p class="info">{{toIntroduceMyself}}</p>
       </main>
     </section>
+    <section>
+      <header>
+        <h2>博客及代码仓库</h2>
+      </header>
+      <main>
+        <nav>
+          <ul>
+            {{each personalWebsite}}
+              <li>
+                <a href="{{$value.url}}">{{$value.name}}: {{$value.url}}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </nav>
+      </main>
+    </section>
+    <section class="works">
+      <header>
+        <h2>开源项目及作品</h2>
+      </header>
+      <main>
+        {{each works}}
+          <h3>{{$value.name}}</h3>
+          <nav>
+            <ul>
+              {{each $value.list}}
+                <li>
+                  {{if $value.url}}
+                    <a href="{{$value.url}}">{{$value.name}}</a>
+                  {{/if}}
+
+                  {{if !$value.url}}
+                    <p>{{$value.name}}</p>
+                  {{/if}}
+
+                  {{if $value.describe}}
+                    <p class="info">{{$value.describe}}</p>
+                  {{/if}}
+                </li>
+              {{/each}}
+            </ul>
+          </nav>
+        {{/each}}
+      </main>
+    </section>
     <section class="work-experience">
       <header>
         <h2>工作经历</h2>
@@ -59,51 +104,6 @@
             </ul>
           </nav>
         {{/each}}
-      </main>
-    </section>
-    <section class="works">
-      <header>
-        <h2>开源项目及作品</h2>
-      </header>
-      <main>
-        {{each works}}
-          <h3>{{$value.name}}</h3>
-          <nav>
-            <ul>
-              {{each $value.list}}
-                <li>
-                  {{if $value.url}}
-                    <a href="{{$value.url}}">{{$value.name}}</a>
-                  {{/if}}
-
-                  {{if !$value.url}}
-                    <p>{{$value.name}}</p>
-                  {{/if}}
-
-                  {{if $value.describe}}
-                    <p class="info">{{$value.describe}}</p>
-                  {{/if}}
-                </li>
-              {{/each}}
-            </ul>
-          </nav>
-        {{/each}}
-      </main>
-    </section>
-    <section>
-      <header>
-        <h2>博客及代码仓库</h2>
-      </header>
-      <main>
-        <nav>
-          <ul>
-            {{each personalWebsite}}
-              <li>
-                <a href="{{$value.url}}">{{$value.name}}: {{$value.url}}</a>
-              </li>
-            {{/each}}
-          </ul>
-        </nav>
       </main>
     </section>
   </main>
