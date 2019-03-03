@@ -33,7 +33,8 @@ a {
 }
 
 .info {
-  color:#757575;
+  white-space: pre-line;
+  color:#676666;
 }
 
 .icon {
@@ -93,6 +94,12 @@ a {
   font-size: 14px;
 }
 
+.main h4 {
+  margin-bottom: 10px;
+
+  font-size: 13px;
+}
+
 .main > section:not(:first-child) {
   margin-top: 12px;
 }
@@ -143,6 +150,10 @@ a {
 
 .main .works li p {
   display: inline-block;
+}
+
+.main .keyword ul {
+  padding-left: 0;
 }
 
 .main .keyword li {

@@ -110,7 +110,10 @@
           <nav>
             <ul>
               {{each $value.describes}}
-                <li>{{$value}}</li>
+                <li>
+                  <h4>{{$value.name}}</h4>
+                  <p class="info">{{$value.content}}</p>
+                </li>
               {{/each}}
             </ul>
           </nav>
